@@ -1,0 +1,81 @@
+#papel-j, #papel-c {
+  transform: rotate(270deg); }
+
+#tesoura-j, #tesoura-c {
+  transform: rotate(250deg); }
+
+#pedra-j, #pedra-c {
+  width: 110px;
+  height: 110px; }
+
+.pontos {
+  font-size: 20pt;
+  padding: 12px;
+  text-align: center; }
+
+.escolhaJogador, .escolhaComputador {
+  opacity: 1; }
+
+.jogador-div {
+  background-color: #5151f7;
+  float: left;
+  width: 500px;
+  height: 250px;
+  border: 1px solid black;
+  margin-left: 100px; }
+
+.computador-div {
+  background-color: #a10000;
+  float: right;
+  width: 500px;
+  height: 250px;
+  border: 1px solid black;
+  margin-right: 100px; }
+
+.jogador {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  opacity: 0.5;
+  cursor: pointer; }
+  .jogador:hover {
+    opacity: 1; }
+
+.computador {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  opacity: 0.5; }
+
+ul {
+  list-style: none;
+  display: flex; }
+
+.vs {
+  text-align: center;
+  margin-top: 20px; }
+
+.escolhaJogador {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  cursor: pointer; }
+
+.escolhaComputador {
+  width: 100px;
+  height: 100px;
+  padding: 15px; }
+
+h2 {
+  text-align: center;
+  color: white; }
+
+.placar {
+  width: 200px;
+  height: 80px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+small {
+  padding: 5px; }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo.css">
+    <title>JokenPo</title>
+    <script src="game.js"></script>
+    <script src="teste.js"></script>
+</head>
+<body>
+
+
+<div class="placar">
+    <ul id="pontuacao">
+        <li class="pontos" id="ptJ">0</li>
+        <li class="pontos">X</li>
+        <li class="pontos" id="ptC">0</li>
+    </ul>
+</div>
+
+<div class="jogo"> 
+    <div class="jogador-div">
+        <h2>Jogador</h2>
+        <ul>
+            <li><img src="img/Pedra.png" alt="" class="jogador" id="pedra-j" onclick="game(1)"></li>
+            <li><img src="img/papel.png" alt="" class="jogador"  id="papel-j" onclick="game(2)"></li>
+            <li><img src="img/tesoura.png" alt="" class="jogador" id="tesoura-j" onclick="game(3)"></li>
+        </ul>
+    </div>
+
+    <div class="computador-div">
+        <h2>Computador</h2>
+        <ul>
+            <li><img src="img/Pedra.png" alt="" class="computador" id="pedra-c"></li>
+            <li><img src="img/papel.png" alt="" class="computador" id="papel-c"></li>
+            <li><img src="img/tesoura.png" alt="" class="computador" id="tesoura-c"></li>
+        </ul>
+    </div><br><br><br><br>
+
+    <div class="vs"><h1>VS</h1></div><br>
+</div> 
+
+</body>
+</html>

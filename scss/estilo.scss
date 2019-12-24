@@ -1,0 +1,110 @@
+@import "_mixins";
+@import "_placeholder";
+
+// Tela de Jogador e computador
+
+.jogador-div{
+    @include div(rgb(81, 81, 247), left);
+    margin: {
+        left: 100px;
+    };
+}
+
+.computador-div{
+    @include div(rgb(161, 0, 0), right);
+    margin: {
+        right: 100px;
+    };
+}
+
+// Escolhas (Pedra, Papel, tesoura)
+
+.jogador{
+    @include imagens;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.computador{
+    @include imagens;
+    opacity: 0.5;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+#pedra-j{
+    @extend %pedra;
+}
+
+#pedra-c{
+    @extend %pedra;
+}
+
+#papel-j{
+    @extend %papel;
+}
+
+#papel-c{
+    @extend %papel;
+}
+
+#tesoura-j{
+    @extend %tesoura;
+}
+
+#tesoura-c{
+    @extend %tesoura;
+}
+
+.vs{
+    text-align: center;
+    margin: {
+        top: 20px;
+    };
+}
+
+// destacar qual o jogador e computador escolheram
+
+.escolhaJogador{
+    @include imagens;
+    @extend %escolha;
+    cursor: pointer;
+}
+
+.escolhaComputador{
+    @include imagens;
+    @extend %escolha;
+}
+
+// Placar 
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+.placar{
+    width: 200px;
+    height: 80px;
+    margin: auto;
+    margin: {
+        top: 10px;
+        bottom: 10px;
+    };
+}
+
+small{
+    padding: 5px;
+}
+
+.pontos{
+    @extend %pontos;
+}
+

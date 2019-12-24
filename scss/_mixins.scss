@@ -1,0 +1,14 @@
+@mixin div ($color, $float){
+    background-color: $color;
+    float: $float;
+    width: 500px;
+    height: 250px;
+    border: 1px solid black;
+}
+
+@mixin imagens {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+}
+
