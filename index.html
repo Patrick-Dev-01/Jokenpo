@@ -7,40 +7,79 @@
     <link rel="stylesheet" href="estilo.css">
     <title>JokenPo</title>
     <script src="game.js"></script>
-    <script src="teste.js"></script>
 </head>
 <body>
+    <div id="teste" onclick="eventos();"></div>
+<!--Menu-->
+    <div class="menu">
+        <h1 id="title">Bem - Vindo ao Game do Jokenpo</h1>
+        <!--Modo classico ou personalizado-->
+        <table id="game-modes">
+            <tr>
+                <td class="modos">
+                    <small id="desc-classico">Jogar com as Regras padrões do Jogo. Rodada unica, 3 pontos para vencer.</small>
+                </td>
+                <td class="modos">
+                    <label for="pontos">Pontos: </label> 
+                    <input type="number" name="" id="pontos" min="1" max="10" value="1">
+                    <br><br>
+                    <label for="pontos">Rodadas: </label> 
+                    <input type="number" name="" id="rodadas" min="1" max="10" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td class="modos"><button type="button" class="btn" id="btn-classico" onclick="partida(3);">Clássico</button></td>
+                <td class="modos"><button type="button" class="btn" id="btn-personalizado" onclick="partida();">Personalizado</button></td>
+            </tr>
+        </table>
+    </div>
 
+    <audio src="./soundtrack/jogo.mp3" id="audio1"></audio>
+    <audio src="./soundtrack/jokenpo.mp3" id="audio2"></audio>
+    <audio src="./soundtrack/apresentacao.mp3" id="audio3"></audio>
+    <audio src="./soundtrack/Flawless_Victory.mp3" id="audio4"></audio>
+    <audio src="./soundtrack/perdeu.mp3" id="audio5"></audio>
+    <audio src="./soundtrack/ganhou.mp3" id="audio6"></audio>
 
-<div class="placar">
-    <ul id="pontuacao">
-        <li class="pontos" id="ptJ">0</li>
-        <li class="pontos">X</li>
-        <li class="pontos" id="ptC">0</li>
-    </ul>
-</div>
+<!--aqui começa o jogo-->
 
 <div class="jogo"> 
-    <div class="jogador-div">
-        <h2>Jogador</h2>
-        <ul>
-            <li><img src="img/Pedra.png" alt="" class="jogador" id="pedra-j" onclick="game(1)"></li>
-            <li><img src="img/papel.png" alt="" class="jogador"  id="papel-j" onclick="game(2)"></li>
-            <li><img src="img/tesoura.png" alt="" class="jogador" id="tesoura-j" onclick="game(3)"></li>
+       <a href="index.html"><button type="button" id="btn-menu">Menu</button></a>
+    <div class="placar">
+        <ul id="pontuacao">
+            <li class="pontos" id="ptJ">0</li>
+            <li class="pontos">X</li>
+            <li class="pontos" id="ptC">0</li>
         </ul>
     </div>
 
-    <div class="computador-div">
+    <!--Hud do jogo-->
+
+    <div class="jogador-div"><span class="rodada" id="rodada-J">0</span>
+        <h2>Jogador</h2>
+        <ul id="ul-jogador">
+            <li class="es"><img src="img/Pedra.png" alt="" class="jogador" id="pedra-j" onclick="jogada(1)"></li>
+            <li><img src="img/papel.png" alt="" class="jogador"  id="papel-j" onclick="jogada(2)"></li>
+            <li><img src="img/tesoura.png" alt="" class="jogador" id="tesoura-j" onclick="jogada(3)"></li>
+        </ul>
+    </div>
+    
+    <div class="computador-div"><span class="rodada" id="rodada-C">0</span>
         <h2>Computador</h2>
         <ul>
             <li><img src="img/Pedra.png" alt="" class="computador" id="pedra-c"></li>
             <li><img src="img/papel.png" alt="" class="computador" id="papel-c"></li>
             <li><img src="img/tesoura.png" alt="" class="computador" id="tesoura-c"></li>
         </ul>
-    </div><br><br><br><br>
+    </div>
+    
+    <br><br><br><br>
 
     <div class="vs"><h1>VS</h1></div><br>
-</div> 
 
+    <div id="resultado">
+        <h3 id="vencedor"></h3>
+    </div>
+</div> 
 </body>
 </html>

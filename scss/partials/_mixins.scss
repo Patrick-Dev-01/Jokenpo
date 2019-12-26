@@ -1,0 +1,35 @@
+// mixins
+
+@mixin div ($color, $float, $width, $height, $border){
+    background-color: $color;
+    float: $float;
+    width: $width;
+    height: $height;
+    border: $border;
+}
+
+@mixin imagens ($width, $height, $rotate){
+    width: $width;
+    height: $height;
+    padding: 15px;
+    transform: rotate(#{$rotate}deg);
+}
+
+@mixin input($width, $height, $left){
+    width: $width;
+    height: $height;
+    margin: {
+        left: $left;
+    };
+}
+
+@mixin rodada($float, $font-color, $margin-left, $margin-right) {
+    float: $float;
+    color: $font-color;
+    margin: {
+        left: $margin-left;
+        right: $margin-right;
+        top: 10px;
+    };
+}
+

@@ -1,20 +1,89 @@
-#papel-j, #papel-c {
-  transform: rotate(270deg); }
-
-#tesoura-j, #tesoura-c {
-  transform: rotate(250deg); }
-
-#pedra-j, #pedra-c {
-  width: 110px;
-  height: 110px; }
-
 .pontos {
   font-size: 20pt;
   padding: 12px;
   text-align: center; }
 
+.btn, #btn-menu {
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  padding: 5px; }
+
+#desc-classico {
+  font-size: 14pt; }
+
 .escolhaJogador, .escolhaComputador {
-  opacity: 1; }
+  opacity: 1;
+  pointer-events: none;
+  margin-left: 140px; }
+
+body {
+  background-color: #57e757; }
+
+.menu {
+  background-color: #bebebe;
+  float: none;
+  width: 900px;
+  height: 450px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 50px; }
+
+#title {
+  text-align: center;
+  margin-top: 80px; }
+
+#game-modes {
+  width: 600px;
+  margin: auto;
+  border: 1px solid black;
+  border-spacing: 0px;
+  background-color: white; }
+
+.modos {
+  border: 1px solid black;
+  width: 200px;
+  text-align: center;
+  padding: 10px; }
+
+#btn-classico {
+  background-color: green;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black; }
+
+label {
+  float: left;
+  margin-left: 10px;
+  font-size: 14pt; }
+
+#pontos {
+  width: 150px;
+  height: 20px;
+  margin-left: 10px; }
+
+#rodadas {
+  width: 150px;
+  height: 20px;
+  margin-left: 0; }
+
+#btn-personalizado {
+  background-color: blue;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black; }
+
+#btn-menu {
+  background-color: #9dd6fc;
+  color: black;
+  font-display: bold;
+  margin-left: 20px;
+  border: 1px solid black; }
+
+.jogo {
+  display: none; }
 
 .jogador-div {
   background-color: #5151f7;
@@ -32,39 +101,64 @@
   border: 1px solid black;
   margin-right: 100px; }
 
-.jogador {
-  width: 100px;
-  height: 100px;
-  padding: 15px;
-  opacity: 0.5;
-  cursor: pointer; }
-  .jogador:hover {
-    opacity: 1; }
-
-.computador {
-  width: 100px;
-  height: 100px;
-  padding: 15px;
-  opacity: 0.5; }
-
 ul {
   list-style: none;
   display: flex; }
 
-.vs {
-  text-align: center;
-  margin-top: 20px; }
+.jogador {
+  opacity: 0.5;
+  pointer-events: visible;
+  cursor: pointer;
+  margin-left: 0px; }
+  .jogador:hover {
+    opacity: 1; }
 
-.escolhaJogador {
+.computador {
+  margin-left: 0px;
+  opacity: 0.5; }
+
+.esconder {
+  display: none; }
+
+#pedra-j {
+  width: 110px;
+  height: 110px;
+  padding: 15px;
+  transform: rotate(0deg); }
+
+#pedra-c {
+  width: 110px;
+  height: 110px;
+  padding: 15px;
+  transform: rotate(0deg); }
+
+#papel-j {
   width: 100px;
   height: 100px;
   padding: 15px;
-  cursor: pointer; }
+  transform: rotate(270deg); }
 
-.escolhaComputador {
+#papel-c {
   width: 100px;
   height: 100px;
-  padding: 15px; }
+  padding: 15px;
+  transform: rotate(270deg); }
+
+#tesoura-j {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  transform: rotate(250deg); }
+
+#tesoura-c {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  transform: rotate(250deg); }
+
+.vs {
+  text-align: center;
+  margin-top: 20px; }
 
 h2 {
   text-align: center;
@@ -74,8 +168,33 @@ h2 {
   width: 200px;
   height: 80px;
   margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 25px; }
 
-small {
-  padding: 5px; }
+#rodada-J {
+  float: right;
+  color: white;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 20pt; }
+
+#rodada-C {
+  float: left;
+  color: white;
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 10px;
+  font-size: 20pt; }
+
+#resultado {
+  background-color: white;
+  float: none;
+  width: 300px;
+  height: 50px;
+  border: none;
+  margin: auto;
+  margin-top: 150px; }
+
+#vencedor {
+  padding: 5px;
+  text-align: center; }

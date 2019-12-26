@@ -1,37 +1,124 @@
-@import "_mixins";
-@import "_placeholder";
+@import "partials/_mixins";
+@import "partials/_placeholder";
+@import "partials/_variaveis";
+
+// Menu do jogo
+
+body{
+    background-color: rgb(87, 231, 87);
+}
+
+.menu{
+    @include div(rgb(190, 190, 190), none, 900px, 450px, $border-black);
+    margin: auto;
+    margin-top: 50px;
+}
+
+#title{
+    text-align: center;
+    margin: {
+        top: 80px;
+    };
+}
+
+// tabela de modos de jogo
+
+#game-modes{
+    width: 600px;
+    margin: auto;
+    border: $border-black;
+    border-spacing: 0px;
+    background-color: $background-white;
+}
+
+.modos{
+    border: $border-black;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.btn{
+    @extend %botoes;
+}
+
+// modo classico
+
+#desc-classico{
+    @extend %descricao;
+}
+
+#btn-classico{
+    background-color: green;
+    color: white;
+    margin: { 
+        top: 10px
+    }
+    margin-bottom: 10px;
+    border: $border-black;
+}
+
+// modo personalizado
+
+label{
+    float: left;
+    margin-left: 10px;
+    font: {
+        size: 14pt;
+    };
+}
+
+#pontos{
+    @include input(150px, 20px, 10px);
+}
+
+#rodadas{
+    @include input(150px, 20px, 0);
+}
+
+#btn-personalizado{
+    background-color: blue;
+    color: white;
+    margin: { 
+        top: 10px
+    }
+    margin-bottom: 10px;
+    border: $border-black;
+}
+
+// botao para voltar para o menu 
+
+#btn-menu{
+    @extend %botoes;
+    background-color: rgb(157, 214, 252);
+    color: rgb(0, 0, 0);
+    font: {
+        display: bold;
+    };
+    margin: {
+        left: 20px;
+    };
+    border: $border-black;
+}
 
 // Tela de Jogador e computador
 
+.jogo{
+    display: none;
+}
+
 .jogador-div{
-    @include div(rgb(81, 81, 247), left);
+    @include div(rgb(81, 81, 247), left, 500px, 250px, $border-black);
     margin: {
         left: 100px;
     };
 }
 
 .computador-div{
-    @include div(rgb(161, 0, 0), right);
+    @include div(rgb(161, 0, 0), right, 500px, 250px, $border-black);
     margin: {
         right: 100px;
     };
-}
-
-// Escolhas (Pedra, Papel, tesoura)
-
-.jogador{
-    @include imagens;
-    opacity: 0.5;
-    cursor: pointer;
-
-    &:hover{
-        opacity: 1;
-    }
-}
-
-.computador{
-    @include imagens;
-    opacity: 0.5;
 }
 
 ul{
@@ -39,28 +126,62 @@ ul{
     display: flex;
 }
 
+// Escolhas (Pedra, Papel, tesoura)
+
+.jogador{
+    opacity: 0.5;
+    pointer-events: visible; //habilitar o clique quando a rodada recomeçar
+    cursor: pointer;
+    margin-left: 0px;
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.computador{
+    margin-left: 0px;
+    opacity: 0.5;
+}
+
+// destacar qual o jogador e computador escolheram
+
+.escolhaJogador{
+    @extend %escolha;
+}
+
+.escolhaComputador{
+    @extend %escolha;
+}
+
+//  esconder as outras opções
+.esconder{
+    display: none;
+}
+
+
 #pedra-j{
-    @extend %pedra;
+    @include imagens(110px,110px, 0);
 }
 
 #pedra-c{
-    @extend %pedra;
+    @include imagens(110px,110px, 0);
 }
 
 #papel-j{
-    @extend %papel;
+    @include imagens(100px,100px, 270);
 }
 
 #papel-c{
-    @extend %papel;
+    @include imagens(100px,100px, 270);
 }
 
 #tesoura-j{
-    @extend %tesoura;
+    @include imagens(100px,100px, 250);
 }
 
 #tesoura-c{
-    @extend %tesoura;
+    @include imagens(100px,100px, 250);
 }
 
 .vs{
@@ -68,19 +189,6 @@ ul{
     margin: {
         top: 20px;
     };
-}
-
-// destacar qual o jogador e computador escolheram
-
-.escolhaJogador{
-    @include imagens;
-    @extend %escolha;
-    cursor: pointer;
-}
-
-.escolhaComputador{
-    @include imagens;
-    @extend %escolha;
 }
 
 // Placar 
@@ -95,16 +203,41 @@ h2{
     height: 80px;
     margin: auto;
     margin: {
-        top: 10px;
-        bottom: 10px;
+        bottom: 25px;
     };
 }
 
-small{
-    padding: 5px;
+// rodadas vencidas
+#rodada-J{
+    @include rodada(right, white, 0px, 10px);
+    font: {
+        size: 20pt;
+    };
+}
+
+#rodada-C{
+    @include rodada(left, white, 10px, 0px);
+    font: {
+        size: 20pt;
+    };
 }
 
 .pontos{
     @extend %pontos;
+}
+
+// tela do vencedor
+
+#resultado{
+    @include div(white, none, 300px, 50px, none);
+    margin: auto;
+    margin: {
+        top: 150px;
+    };
+}
+
+#vencedor{
+    padding: 5px;
+    text-align: center;
 }
 

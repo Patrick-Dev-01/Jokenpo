@@ -1,0 +1,26 @@
+%pontos{
+    font: {
+        size: 20pt;
+    };
+    padding: 12px;
+    text-align: center;
+}
+
+%botoes{
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+%descricao{
+    font: {
+        size: 14pt;
+    };
+}
+
+%escolha{
+    opacity: 1;
+    pointer-events: none; //impedir que o jogador clique nas imagens enquanto uma jogada ocorre
+    margin-left: 140px;
+}
