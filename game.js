@@ -536,7 +536,7 @@ function modoTorneio(){
     // se a batalha for igual a zero, significa que o jogador ainda não começou o torneio
     if(batalha == 0){
         // somar mais 1 na variavel de batalha, para começar o torneio
-        batalha += 7;
+        batalha ++;
         //esconder o numero de rodadas ganhas, porque as primeira batalhas são rodadas unicas
         rodadas_J.style.display = "none";
         rodadas_C.style.display = "none";

@@ -27,6 +27,10 @@
 - Adição de nomes fictícios e cores na bandeira do oponente no modo Torneio
 - Escolha randômica de oponentes sem repeti - los
 
+# Versão 1.5.1
+
+- Pequena correção
+
 # Trilha Sonora
 
 - Alex Kidd in the Enchanted Castle
