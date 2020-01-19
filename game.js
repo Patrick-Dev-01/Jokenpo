@@ -536,7 +536,7 @@ function modoTorneio(){
     // se a batalha for igual a zero, significa que o jogador ainda não começou o torneio
     if(batalha == 0){
         // somar mais 1 na variavel de batalha, para começar o torneio
-        batalha ++;
+        batalha += 7;
         //esconder o numero de rodadas ganhas, porque as primeira batalhas são rodadas unicas
         rodadas_J.style.display = "none";
         rodadas_C.style.display = "none";
@@ -555,7 +555,7 @@ function modoTorneio(){
         }
         //batalha 7 chefe Final
         else if(batalha == 7){
-            minPontos = 1;
+            minPontos = 5;
             max_Rodadas = 2;
         }
     //se o numero de rodadas for menor ou igual a 1 ou indefinido, é rodada unica 
