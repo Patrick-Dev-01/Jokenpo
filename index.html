@@ -9,26 +9,33 @@
     <script src="game.js"></script>
 </head>
 <body>
-    <div id="teste" onclick="eventos();"></div>
 <!--Menu-->
     <div class="menu">
         <h1 id="title">Bem - Vindo ao Game do Jokenpo</h1>
         <!--Modo classico ou personalizado-->
         <table id="game-modes">
             <tr>
+                <!--Classico-->
                 <td class="modos">
                     <small id="desc-classico">Jogar com as Regras padrões do Jogo. Rodada unica, 3 pontos para vencer.</small>
                 </td>
+                <!--Modo Torneio-->
+                <td class="modos">
+                        <small id="desc-torneio">Modo Torneio, Jogue com oponentes aleatórios e tente chegar na batalha final.</small>
+                    </td>
+                <!--Personalizado-->
                 <td class="modos">
                     <label for="pontos">Pontos: </label> 
-                    <input type="number" name="" id="pontos" min="1" max="10" value="1">
+                    <input type="number" name="" id="pontos" min="1" max="5" value="3">
                     <br><br>
                     <label for="pontos">Rodadas: </label> 
-                    <input type="number" name="" id="rodadas" min="1" max="10" value="1">
+                    <input type="number" name="" id="rodadas" min="1" max="5" value="1">
                 </td>
             </tr>
             <tr>
                 <td class="modos"><button type="button" class="btn" id="btn-classico" onclick="partida(3);">Clássico</button></td>
+                <!--Modo Torneio-->
+                <td class="modos"><button type="button" class="btn" id="btn-torneio" onclick="partida(2);">Torneio</button></td>
                 <td class="modos"><button type="button" class="btn" id="btn-personalizado" onclick="partida();">Personalizado</button></td>
             </tr>
         </table>
@@ -40,8 +47,21 @@
     <audio src="./soundtrack/Flawless_Victory.mp3" id="audio4"></audio>
     <audio src="./soundtrack/perdeu.mp3" id="audio5"></audio>
     <audio src="./soundtrack/ganhou.mp3" id="audio6"></audio>
+    <audio src="./soundtrack/venceu-torneio.mp3" id="audio7"></audio>
 
-<!--aqui começa o jogo-->
+<!--tela de GamePlay jogo-->
+
+<!--Tela modal que vai aparecer se o jogador escolheu o modo torneio-->
+<div id="torneio">
+    <div class="box">
+        <h1 id="title-torneio">Torneio</h1>
+        <p id="nota">O modo torneio consiste em varias jogos simultaneos, por tanto, após terminar uma partida, um novo oponente será
+        escolhido imediatamente. Serão 7 Batalhas no total, 6 são Rodada unica de 3 pontos e a ultima batalha é 5 pontos e 2 rodadas. Se abandonar o jogo ou for
+        derrotado, o jogo volta do INICIO!</p>
+        <a href="index.html"><button type="button" class="btn" id="btn-voltar">Voltar</button></a>
+        <button type="button" class="btn" id="btn-comecar" onclick="modoTorneio();">Começar</button></a>   
+    </div>
+</div>
 
 <div class="jogo"> 
        <a href="index.html"><button type="button" id="btn-menu">Menu</button></a>
@@ -55,7 +75,7 @@
 
     <!--Hud do jogo-->
 
-    <div class="jogador-div"><span class="rodada" id="rodada-J">0</span>
+    <div class="jogador-div"><span class="rodada" id="rodadas-J">0</span>
         <h2>Jogador</h2>
         <ul id="ul-jogador">
             <li class="es"><img src="img/Pedra.png" alt="" class="jogador" id="pedra-j" onclick="jogada(1)"></li>
@@ -64,8 +84,8 @@
         </ul>
     </div>
     
-    <div class="computador-div"><span class="rodada" id="rodada-C">0</span>
-        <h2>Computador</h2>
+    <div class="computador-div"><span class="rodada" id="rodadas-C">0</span>
+        <h2 id="oponente">Computador</h2>
         <ul>
             <li><img src="img/Pedra.png" alt="" class="computador" id="pedra-c"></li>
             <li><img src="img/papel.png" alt="" class="computador" id="papel-c"></li>
@@ -80,6 +100,8 @@
     <div id="resultado">
         <h3 id="vencedor"></h3>
     </div>
+
+    <strong class="torneio-battle">Batalha <strong class="bt">1</strong>/7</strong>
 </div> 
 </body>
 </html>

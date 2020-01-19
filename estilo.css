@@ -1,21 +1,39 @@
 .pontos {
   font-size: 20pt;
   padding: 12px;
-  text-align: center; }
+  text-align: center;
+  color: white; }
 
 .btn, #btn-menu {
   width: 100px;
   height: 30px;
   cursor: pointer;
-  padding: 5px; }
+  padding: 5px;
+  margin-left: 70px; }
 
-#desc-classico {
-  font-size: 14pt; }
+#desc-classico, #desc-torneio {
+  font-size: 13pt; }
 
 .escolhaJogador, .escolhaComputador {
   opacity: 1;
   pointer-events: none;
   margin-left: 140px; }
+
+#torneio {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(136, 136, 136, 0.8);
+  position: fixed;
+  display: none; }
+
+.box {
+  width: 590px;
+  height: 300px;
+  margin: auto;
+  background-color: white;
+  margin-top: 100px; }
 
 body {
   background-color: #57e757; }
@@ -34,7 +52,7 @@ body {
   margin-top: 80px; }
 
 #game-modes {
-  width: 600px;
+  width: 800px;
   margin: auto;
   border: 1px solid black;
   border-spacing: 0px;
@@ -43,7 +61,7 @@ body {
 .modos {
   border: 1px solid black;
   width: 200px;
-  text-align: center;
+  text-align: justify;
   padding: 10px; }
 
 #btn-classico {
@@ -61,12 +79,12 @@ label {
 #pontos {
   width: 150px;
   height: 20px;
-  margin-left: 10px; }
+  margin-left: 22px; }
 
 #rodadas {
   width: 150px;
   height: 20px;
-  margin-left: 0; }
+  margin-left: 10px; }
 
 #btn-personalizado {
   background-color: blue;
@@ -74,6 +92,44 @@ label {
   margin-top: 10px;
   margin-bottom: 10px;
   border: 1px solid black; }
+
+.box {
+  border: 1px solid black; }
+
+#btn-torneio {
+  background-color: #ffff04;
+  color: black;
+  border: 1px solid black; }
+
+#btn-comecar {
+  background-color: #57ff57;
+  float: right;
+  color: black;
+  margin-top: 50px;
+  margin-right: 10px;
+  border: 1px solid black; }
+
+#btn-voltar {
+  background-color: #303030;
+  float: left;
+  color: white;
+  margin-top: 50px;
+  margin-left: 10px; }
+
+#title-torneio {
+  text-align: center;
+  margin-top: 5px; }
+
+.torneio-battle {
+  text-align: center;
+  color: transparent;
+  font-size: 18pt; }
+
+#nota {
+  text-align: justify;
+  font-size: 14pt;
+  margin-left: 5px;
+  padding: 5px; }
 
 #btn-menu {
   background-color: #9dd6fc;
@@ -158,7 +214,8 @@ ul {
 
 .vs {
   text-align: center;
-  margin-top: 20px; }
+  margin-top: 20px;
+  color: white; }
 
 h2 {
   text-align: center;
@@ -170,7 +227,7 @@ h2 {
   margin: auto;
   margin-bottom: 25px; }
 
-#rodada-J {
+#rodadas-J {
   float: right;
   color: white;
   margin-left: 0px;
@@ -178,7 +235,7 @@ h2 {
   margin-top: 10px;
   font-size: 20pt; }
 
-#rodada-C {
+#rodadas-C {
   float: left;
   color: white;
   margin-left: 10px;
@@ -187,7 +244,7 @@ h2 {
   font-size: 20pt; }
 
 #resultado {
-  background-color: white;
+  background-color: #404142;
   float: none;
   width: 300px;
   height: 50px;
@@ -196,5 +253,7 @@ h2 {
   margin-top: 150px; }
 
 #vencedor {
+  color: white;
+  font-size: 18pt;
   padding: 5px;
   text-align: center; }

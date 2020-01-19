@@ -24,7 +24,7 @@ body{
 // tabela de modos de jogo
 
 #game-modes{
-    width: 600px;
+    width: 800px;
     margin: auto;
     border: $border-black;
     border-spacing: 0px;
@@ -34,7 +34,7 @@ body{
 .modos{
     border: $border-black;
     width: 200px;
-    text-align: center;
+    text-align: justify;
     padding: 10px;
 }
 
@@ -69,11 +69,11 @@ label{
 }
 
 #pontos{
-    @include input(150px, 20px, 10px);
+    @include input(150px, 20px, 22px);
 }
 
 #rodadas{
-    @include input(150px, 20px, 0);
+    @include input(150px, 20px, 10px);
 }
 
 #btn-personalizado{
@@ -84,6 +84,74 @@ label{
     }
     margin-bottom: 10px;
     border: $border-black;
+}
+
+// Modo Torneio
+
+#desc-torneio{
+    @extend %descricao;
+}
+
+#torneio{
+    @extend %fundo;
+}
+
+.box{
+    @extend %modal;
+    border: $border-black;
+}
+
+#btn-torneio{
+    background-color: rgb(255, 255, 4);
+    color: black;
+    border: $border-black;
+}
+
+#btn-comecar{
+    background-color: rgb(87, 255, 87);
+    float: right;
+    color: rgb(0, 0, 0);
+    margin: {
+        top: 50px;
+        right: 10px;
+    };
+    border: $border-black;
+}
+
+#btn-voltar{
+    background-color: rgb(48, 48, 48);
+    float: left;
+    color: white;
+    margin: {
+        top: 50px;
+        left: 10px;
+    };
+}
+
+#title-torneio{
+    text-align: center;
+    margin: {
+        top: 5px;
+    };
+}
+
+.torneio-battle{
+    text-align: center;
+    color: transparent;
+    font: {
+        size: 18pt;
+    };
+}
+
+#nota{
+    text-align: justify;
+    font: {
+        size: 14pt;
+    };
+    margin: {
+        left: 5px;
+    };
+    padding: 5px;
 }
 
 // botao para voltar para o menu 
@@ -154,7 +222,7 @@ ul{
     @extend %escolha;
 }
 
-//  esconder as outras opções
+//  esconder as outras opções quando os dois escolherem a jogada
 .esconder{
     display: none;
 }
@@ -189,6 +257,7 @@ ul{
     margin: {
         top: 20px;
     };
+    color: white;
 }
 
 // Placar 
@@ -208,14 +277,14 @@ h2{
 }
 
 // rodadas vencidas
-#rodada-J{
+#rodadas-J{
     @include rodada(right, white, 0px, 10px);
     font: {
         size: 20pt;
     };
 }
 
-#rodada-C{
+#rodadas-C{
     @include rodada(left, white, 10px, 0px);
     font: {
         size: 20pt;
@@ -229,14 +298,18 @@ h2{
 // tela do vencedor
 
 #resultado{
-    @include div(white, none, 300px, 50px, none);
+    @include div(rgb(64, 65, 66), none, 300px, 50px, none);
     margin: auto;
     margin: {
         top: 150px;
-    };
+    };  
 }
 
 #vencedor{
+    color: white;
+    font: {
+        size: 18pt;
+    };
     padding: 5px;
     text-align: center;
 }
